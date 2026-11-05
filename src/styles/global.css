@@ -76,7 +76,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   pointer-events: none;
   margin-bottom: clamp(1.5rem, 4vh, 3rem);
 }
-.row { display: flex; white-space: nowrap; }
+.row { display: flex; white-space: nowrap; overflow: hidden; padding-block: 0.08em; margin-block: -0.08em; }
 .ch { display: inline-block; font-variation-settings: 'wdth' 72, 'wght' 760; will-change: font-variation-settings; }
 .hero-foot { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: end; gap: 2rem; flex-wrap: wrap; border-top: 1px solid var(--ink); background: var(--bg); margin: 0 calc(var(--gutter) * -1) calc(var(--gutter) * -1); padding: 1.1rem var(--gutter) var(--gutter); }
 .role { max-width: 34ch; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.35; text-wrap: balance; }

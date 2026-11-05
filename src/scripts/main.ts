@@ -49,6 +49,7 @@ onScroll();
 
 /* Vibrating line field (Soto / Cruz-Diez): 1px lines bend around a point, a colour strip layer shifts behind */
 const ease = (t: number) => 1 - Math.pow(1 - Math.min(Math.max(t, 0), 1), 4);
+const easeOutExpo = (t: number) => { const x = Math.min(Math.max(t, 0), 1); return x === 1 ? 1 : 1 - Math.pow(2, -10 * x); };
 const t0 = performance.now();
 const coarse = matchMedia('(pointer: coarse)').matches;
 
@@ -160,10 +161,11 @@ function updateLetters(now: number) {
     const dx = r.left - hr.left + r.width / 2 - cx;
     const dy = r.top - hr.top + r.height / 2 - cy;
     const near = Math.exp(-(dx * dx + dy * dy) / (2 * 240 * 240));
-    const intro = reduce ? 0 : 1 - ease((t - 250 - i * 70) / 1100);
-    const wdth = 72 + near * 22 + intro * 60;
-    const wght = 760 + near * 15 - intro * 300;
+    const intro = reduce ? 0 : 1 - easeOutExpo((t - 350 - i * 60) / 1100);
+    const wdth = 72 + near * 22 + intro * 8;
+    const wght = 760 + near * 15 - intro * 80;
     el.style.fontVariationSettings = `'wdth' ${wdth.toFixed(1)}, 'wght' ${wght.toFixed(0)}`;
+    el.style.transform = intro > 0.001 ? `translateY(${(intro * 108).toFixed(2)}%)` : '';
   });
 }
 
