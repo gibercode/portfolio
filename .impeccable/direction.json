@@ -1,0 +1,99 @@
+{
+  "title": "Elige el mundo visual de tu portafolio",
+  "question": "El sorteo asignó «Carta topográfica» (Roraima). Puedes quedarte con ella, tomar una alternativa o volver a sortear.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Carta topográfica · Roraima",
+      "kicker": "THE ROLL",
+      "lineage": "Cartas de levantamiento topográfico y mapas de curvas de nivel",
+      "thesis": "Tu código como territorio: cada proyecto es una cota en un relieve de curvas de nivel dibujado por tu actividad real.",
+      "palette": ["#ff5a1f", "#14110f", "#ffd9c2", "#f4efe6"],
+      "materials": ["tinta negra sobre campo naranja", "curvas de nivel trazadas a mano", "numerales de cota tabulares"],
+      "viewport": "Un campo naranja completo cruzado por curvas de nivel de un tepuy. Tu nombre en tipografía enorme asienta sobre la cima, un punto de cota marca «Giberson Lara · desarrollador full-stack» y el cursor funciona como sonda de elevación.",
+      "risk": "Si las curvas se vuelven fondo decorativo en vez de dato, parece un patrón genérico; deben reaccionar al cursor y al scroll, y ser la navegación.",
+      "raised": [
+        {"from": "Zine dibujado a mano", "raise": "Las curvas se trazan en el scroll con draw-on, y con movimiento reducido ya vienen dibujadas."},
+        {"from": "Contador Nixie", "raise": "Las cotas de proyectos y habilidades son numerales tabulares grabados, con etiquetas en versalitas."},
+        {"from": "Sección de luz diurna", "raise": "Un perfil de elevación continuo recorre la página y fija las anotaciones a su altura."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Mapa de metro de commits",
+      "kicker": "IMPECCABLE'S PICK",
+      "lineage": "Diagramas de metro estilo Vignelli",
+      "thesis": "Tu historial de git dibujado como línea de metro: cada proyecto es una estación y cada tecnología, una línea de color.",
+      "palette": ["#f4f1ea", "#111111", "#e4002b", "#0057b8"],
+      "materials": ["diagrama a 45°", "líneas de color planas", "tipografía grotesca"],
+      "viewport": "Una red de líneas que sale de tu nombre; las estaciones son proyectos reales.",
+      "risk": "Es la dirección más natural para un desarrollador y por eso la más probable de verse en otros portafolios."
+    },
+    {
+      "id": "challenger-lineup",
+      "label": "Cartel de festival",
+      "verdict": "competitive",
+      "lineage": "Carteles de line-up de festivales",
+      "thesis": "Una sola tipografía, ocho tamaños; lo importante se lee por escala desde lejos.",
+      "palette": ["#0b3bff", "#f4f4ee"],
+      "materials": ["tipografía condensada", "un solo color de fondo y uno de tinta"],
+      "viewport": "Tu nombre ocupa todo el ancho y tus proyectos se ordenan por peso hasta una cola justificada de tecnologías.",
+      "case": "Fusiona muy bien con un portafolio minimalista y se lee en un segundo, pero tiene menos relieve de interacción que la carta topográfica.",
+      "risk": "Sin imágenes, depende por completo de la calidad de la tipografía.",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-festival-lineup-poster-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/posters-covers-sleeves-festival-lineup-poster.webp"
+    },
+    {
+      "id": "challenger-daylight",
+      "label": "Sección de luz diurna",
+      "verdict": "competitive",
+      "lineage": "Dibujos de sección arquitectónica",
+      "thesis": "La página es un solo corte constructivo; un rayo de luz recorre tus proyectos como horas del día.",
+      "palette": ["#f2f0ea", "#2b2b2b", "#e8b100", "#3a4a6b"],
+      "materials": ["cal blanca", "poché en carbón", "rayo dorado"],
+      "viewport": "Un corte de edificio con un rayo que sube por la pared hasta tu nombre.",
+      "case": "Muy distinto y elegante; compite en identidad, pero su lectura de un vistazo es más lenta.",
+      "risk": "Fondo claro y suave: fácil de percibir como sobrio sin ser memorable.",
+      "hero": "https://impeccable.style/worlds/cards/architecture-inhabitable-space-daylight-section-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/architecture-inhabitable-space-daylight-section.webp"
+    },
+    {
+      "id": "challenger-zine",
+      "label": "Zine dibujado a mano",
+      "verdict": "declined",
+      "lineage": "Zines técnicos con marcador",
+      "case": "Pierde en identificación con reclutadores y en claridad del producto.",
+      "kept": "Trazos que se dibujan al hacer scroll.",
+      "hero": "https://impeccable.style/worlds/cards/hand-drawn-zine-explainer-hero.webp"
+    },
+    {
+      "id": "challenger-nixie",
+      "label": "Contador Nixie",
+      "verdict": "declined",
+      "lineage": "Laboratorio de tubos Nixie",
+      "case": "Pierde en ambos ejes: el brillo naranja y los números no cuentan tu historia.",
+      "kept": "Cifras tabulares grabadas como interfaz.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-nixie-laboratory-counter-hero.webp"
+    },
+    {
+      "id": "challenger-ice-press",
+      "label": "Imprenta sobre el hielo",
+      "verdict": "declined",
+      "lineage": "Periódico de expedición polar",
+      "case": "Su ritmo irregular choca con la claridad inmediata que piden clientes y reclutadores.",
+      "kept": "La imperfección tangible: un trazo con presión desigual.",
+      "hero": "https://impeccable.style/worlds/cards/graphic-worlds-publishing-expedition-ice-press-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar de la categoría",
+    "thesis": "Portafolio oscuro y minimalista con hero, cuadrícula de proyectos y stack, bien ejecutado.",
+    "palette": ["#0a0a0a", "#fafafa", "#6366f1"],
+    "materials": ["cuadrícula bento", "tipografía sans neutra"],
+    "viewport": "Saludo, rol y botón de contacto sobre fondo oscuro.",
+    "risk": "Indistinguible de otros portafolios de desarrolladores por diseño."
+  },
+  "steer": true
+}

@@ -1,0 +1,51 @@
+{
+  "title": "Elige el mundo visual de tu portafolio",
+  "question": "Pediste algo más sobrio. Son tres opciones minimalistas y el estándar de la categoría para comparar. Elige una o vuelve a sortear.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Hoja suiza",
+      "kicker": "MÁS SOBRIO",
+      "lineage": "Estilo tipográfico internacional: carteles y hojas de especificación suizas de los años 50 a 70",
+      "thesis": "Una cuadrícula rigurosa, una tipografía grotesca y un solo rojo. Tu nombre y tus proyectos ocupan la rejilla con precisión.",
+      "palette": ["#f5f5f2", "#0d0d0d", "#e30613"],
+      "materials": ["cuadrícula modular visible", "grotesca en dos pesos", "un solo color de acento"],
+      "viewport": "Tu nombre en tamaño enorme en una cuadrícula de 12 columnas, una línea de rol, una lista numerada de proyectos y el enlace de contacto en rojo. Al cargar, las líneas de la rejilla se trazan y las palabras caen en su celda.",
+      "risk": "Es muy seguro: bien ejecutado es elegante, pero si la tipografía y el ritmo no son precisos se ve como una plantilla.",
+      "raised": []
+    },
+    {
+      "id": "safe-datasheet",
+      "label": "Datasheet",
+      "kicker": "MÁS SOBRIO",
+      "lineage": "Hojas de datos de componentes electrónicos",
+      "thesis": "Te presentas como un componente: referencia, parámetros, rangos de operación y diagrama de pines.",
+      "palette": ["#ffffff", "#101418", "#1f4fff"],
+      "materials": ["tablas finas", "líneas de 1px", "azul de especificación"],
+      "viewport": "Encabezado «GIBERSON-LARA · Rev. 2026», tabla de parámetros con tu stack y un diagrama de pines con tus contactos.",
+      "risk": "Se parece al humor de «portafolio como documento técnico» que ya usan otros desarrolladores."
+    },
+    {
+      "id": "safe-board",
+      "label": "Tablero de salidas",
+      "kicker": "MÁS SOBRIO",
+      "lineage": "Tableros mecánicos de salidas en estaciones y aeropuertos",
+      "thesis": "Cada proyecto es una salida: las letras giran hasta mostrar destino, estado y tecnología.",
+      "palette": ["#111111", "#f2f2ee", "#ffc400"],
+      "materials": ["letras que giran", "fondo oscuro mate", "un amarillo de señal"],
+      "viewport": "Un tablero con tu nombre y tres salidas animadas, y una fila final «Contacto».",
+      "risk": "Fondo oscuro con acento fuerte, y el giro de letras puede resultar lento si se abusa."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar de la categoría",
+    "thesis": "Portafolio oscuro minimalista con hero, cuadrícula de proyectos y stack. Se ejecuta al nivel de leerob.io, Brittany Chiang y Josh Comeau.",
+    "palette": ["#0a0a0a", "#fafafa", "#6366f1"],
+    "materials": ["cuadrícula bento", "tipografía sans neutra"],
+    "viewport": "Saludo, rol y botón de contacto sobre fondo oscuro.",
+    "risk": "Indistinguible de otros portafolios de desarrolladores por diseño."
+  },
+  "steer": true
+}

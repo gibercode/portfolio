@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T00:00:00Z",
+  "title": "Design System: Giberson Lara Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "cool-paper": { "role": "neutral", "displayName": "Cool Paper", "canonical": "#f1f3f4", "tonalRamp": ["#2a2c2d", "#4a4d4f", "#6b6f71", "#8c9092", "#acb0b2", "#c8cccd", "#e0e3e4", "#f1f3f4"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0c0c0d", "tonalRamp": ["#0c0c0d", "#26262a", "#404045", "#5a5a60", "#76767c", "#939399", "#b3b3b8", "#d4d4d7"] },
+      "graphite": { "role": "neutral", "displayName": "Graphite", "canonical": "#464a4f", "tonalRamp": ["#1d1f21", "#2f3236", "#464a4f", "#5f6368", "#7b7f84", "#9a9da1", "#bbbdc0", "#dcdddf"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(12, 12, 13, 0.16)", "tonalRamp": ["rgba(12,12,13,0.9)", "rgba(12,12,13,0.7)", "rgba(12,12,13,0.5)", "rgba(12,12,13,0.35)", "rgba(12,12,13,0.25)", "rgba(12,12,13,0.16)", "rgba(12,12,13,0.1)", "rgba(12,12,13,0.05)"] },
+      "accent-cyan": { "role": "primary", "displayName": "Cyan Signal (default live accent)", "canonical": "#00b8d9", "tonalRamp": ["#003640", "#005666", "#00778c", "#0098b3", "#00b8d9", "#4dd0e8", "#99e5f2", "#d6f5fa"] },
+      "accent-magenta": { "role": "secondary", "displayName": "Magenta Pulse (alternate accent)", "canonical": "#ea1e7d", "tonalRamp": ["#4a0828", "#780f40", "#a61659", "#cf1b70", "#ea1e7d", "#f06aa4", "#f7a8c9", "#fcdbe9"] },
+      "accent-yellow": { "role": "tertiary", "displayName": "Solar Yellow (alternate accent)", "canonical": "#ffd400", "tonalRamp": ["#4d4000", "#806a00", "#b39500", "#e6bf00", "#ffd400", "#ffe14d", "#ffeb99", "#fff8d6"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The two-row name; per-letter wdth/wght driven by pointer distance." },
+      "headline": { "displayName": "Headline", "purpose": "Section heads (Work, What I build with, Let's talk)." },
+      "title": { "displayName": "Title", "purpose": "Project names and stack terms; widen on hover." },
+      "body": { "displayName": "Body", "purpose": "Hanken Grotesk reading text and descriptions." },
+      "label": { "displayName": "Label", "purpose": "Uppercase tags and stack group names in Anybody." }
+    },
+    "shadows": [
+      { "name": "focus-halo", "value": "outline: 2px solid #0c0c0d; outline-offset: 3px; box-shadow: 0 0 0 5px var(--accent)", "purpose": "Keyboard focus on every focusable element." },
+      { "name": "bar-rule", "value": "0 1px 0 #0c0c0d", "purpose": "Hard 1px underline on the fixed bar once scrolled; not a blur shadow." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing: button fill 0.45s, width-axis hover 0.5 to 0.6s, reveal 0.8s." },
+      { "name": "motif-drift", "value": "2.4s linear infinite", "purpose": "Project hover stripe motif sliding along its pitch." },
+      { "name": "field-follow", "value": "0.1 lerp per frame", "purpose": "Line field and name letters ease toward the pointer; idle after 3.5s wanders on sine paths." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "760px" },
+      { "name": "field-tight", "value": "700px (canvas width, gap 9px to 7px)" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink block with accent fill rising from the bottom on hover or focus.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Email me</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; min-height: 3rem; padding: 0 1.5rem; background: #0c0c0d; color: #f1f3f4; text-decoration: none; font: 700 0.95rem/1 'Anybody Variable', 'Arial Narrow', sans-serif; font-stretch: 110%; letter-spacing: 0.03em; position: relative; isolation: isolate; overflow: hidden; transition: color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-btn::before { content: ''; position: absolute; inset: 0; background: #00b8d9; transform: translateY(101%); transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); z-index: -1; } .ds-btn:hover, .ds-btn:focus-visible { color: #0c0c0d; } .ds-btn:hover::before, .ds-btn:focus-visible::before { transform: translateY(0); } .ds-btn:focus-visible { outline: 2px solid #0c0c0d; outline-offset: 3px; box-shadow: 0 0 0 5px #00b8d9; }"
+    },
+    {
+      "name": "Underlined Link",
+      "kind": "custom",
+      "refersTo": "link-underlined",
+      "description": "Secondary action in Anybody with a 2px underline that turns accent on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\">GitHub</a>",
+      "css": ".ds-link { color: #0c0c0d; font: 700 0.95rem/1 'Anybody Variable', 'Arial Narrow', sans-serif; font-stretch: 110%; letter-spacing: 0.03em; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.4em; padding: 0.9rem 0; } .ds-link:hover { text-decoration-color: #00b8d9; } .ds-link:focus-visible { outline: 2px solid #0c0c0d; outline-offset: 3px; box-shadow: 0 0 0 5px #00b8d9; }"
+    },
+    {
+      "name": "Accent Swatches and Language Toggle",
+      "kind": "nav",
+      "refersTo": "swatch",
+      "description": "Top-bar controls: three round accent swatches (selected gets an outer ring) and an ES/EN toggle.",
+      "html": "<div class=\"ds-controls\"><button class=\"ds-sw ds-sw-cyan\" aria-pressed=\"true\" aria-label=\"Cyan\"></button><button class=\"ds-sw ds-sw-magenta\" aria-pressed=\"false\" aria-label=\"Magenta\"></button><button class=\"ds-sw ds-sw-yellow\" aria-pressed=\"false\" aria-label=\"Yellow\"></button><span class=\"ds-langs\"><button aria-pressed=\"true\">ES</button><button aria-pressed=\"false\">EN</button></span></div>",
+      "css": ".ds-controls { display: flex; align-items: center; gap: 0.5rem; } .ds-sw { width: 1.25rem; height: 1.25rem; min-width: 1.25rem; border-radius: 50%; border: 1px solid #0c0c0d; position: relative; cursor: pointer; padding: 0; } .ds-sw-cyan { background: #00b8d9; } .ds-sw-magenta { background: #ea1e7d; } .ds-sw-yellow { background: #ffd400; } .ds-sw[aria-pressed='true']::after { content: ''; position: absolute; inset: -5px; border: 1px solid #0c0c0d; border-radius: 50%; } .ds-langs { display: flex; gap: 0.15rem; margin-left: 1rem; font: 700 0.8125rem/1 'Anybody Variable', 'Arial Narrow', sans-serif; font-stretch: 110%; letter-spacing: 0.04em; } .ds-langs button { padding: 0.5rem 0.55rem; min-height: 2.25rem; background: none; border: 0; color: #0c0c0d; font: inherit; cursor: pointer; } .ds-langs button[aria-pressed='true'] { background: #0c0c0d; color: #f1f3f4; }"
+    },
+    {
+      "name": "Project Row",
+      "kind": "card",
+      "refersTo": "button-primary-hover",
+      "description": "Ruled list row: title widens on hover, accent stripe motif drifts in, arrow nudges.",
+      "html": "<a class=\"ds-row\" href=\"#\"><span class=\"ds-row-title\">portfolio</span><span class=\"ds-row-desc\">Short description of the repo.</span><span class=\"ds-row-tags\">Astro · TS</span><span class=\"ds-row-motif\"></span><svg class=\"ds-row-arrow\" viewBox=\"0 0 24 24\" width=\"28\" height=\"28\" aria-hidden=\"true\"><path d=\"M6 18 18 6M8 6h10v10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg></a>",
+      "css": ".ds-row { position: relative; display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) 9rem 28px; align-items: center; gap: 1.5rem; padding: 1.4rem 0; border-top: 1px solid #0c0c0d; border-bottom: 1px solid #0c0c0d; color: #0c0c0d; text-decoration: none; overflow: hidden; } .ds-row-title { position: relative; z-index: 1; font: 800 2.2rem/1 'Anybody Variable', 'Arial Narrow', sans-serif; font-variation-settings: 'wdth' 64, 'wght' 760; transition: font-variation-settings 0.6s cubic-bezier(0.16,1,0.3,1); } .ds-row-desc { position: relative; z-index: 1; color: #464a4f; max-width: 40ch; font: 400 1.0625rem/1.55 'Hanken Grotesk Variable', system-ui, sans-serif; } .ds-row-tags { position: relative; z-index: 1; text-align: right; font: 600 0.8125rem/1.2 'Anybody Variable', 'Arial Narrow', sans-serif; font-stretch: 105%; letter-spacing: 0.05em; text-transform: uppercase; } .ds-row-arrow { position: relative; z-index: 1; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-row-motif { position: absolute; inset: 0 0 0 auto; width: 38%; opacity: 0; pointer-events: none; background: repeating-linear-gradient(90deg, #00b8d9 0 3px, transparent 3px 7px), repeating-linear-gradient(90deg, #0c0c0d 0 1px, transparent 1px 7px); background-size: 14px 100%, 7px 100%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 40%); mask-image: linear-gradient(90deg, transparent, #000 40%); transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-row:hover .ds-row-title, .ds-row:focus-visible .ds-row-title { font-variation-settings: 'wdth' 128, 'wght' 800; } .ds-row:hover .ds-row-motif, .ds-row:focus-visible .ds-row-motif { opacity: 1; animation: ds-drift 2.4s linear infinite; } .ds-row:hover .ds-row-arrow, .ds-row:focus-visible .ds-row-arrow { transform: translate(4px, -4px); } @keyframes ds-drift { to { background-position: 14px 0, 7px 0; } } .ds-row:focus-visible { outline: 2px solid #0c0c0d; outline-offset: 3px; box-shadow: 0 0 0 5px #00b8d9; }"
+    },
+    {
+      "name": "Stack Term Group",
+      "kind": "custom",
+      "refersTo": "typography.title",
+      "description": "Label column plus large width-axis terms that widen and underline in accent on hover.",
+      "html": "<div class=\"ds-group\"><span class=\"ds-group-label\">Backend</span><div class=\"ds-terms\"><span class=\"ds-term\">Node</span><span class=\"ds-term\">PostgreSQL</span></div></div>",
+      "css": ".ds-group { display: grid; grid-template-columns: minmax(7rem,14rem) 1fr; gap: 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(12,12,13,0.16); align-items: baseline; color: #0c0c0d; } .ds-group-label { font: 700 0.8125rem/1.2 'Anybody Variable', 'Arial Narrow', sans-serif; font-stretch: 105%; letter-spacing: 0.06em; text-transform: uppercase; } .ds-terms { display: flex; flex-wrap: wrap; gap: 0.2em 1.4rem; } .ds-term { font: 800 2.2rem/1.1 'Anybody Variable', 'Arial Narrow', sans-serif; font-variation-settings: 'wdth' 70, 'wght' 700; transition: font-variation-settings 0.5s cubic-bezier(0.16,1,0.3,1); cursor: default; } .ds-term:hover { font-variation-settings: 'wdth' 130, 'wght' 800; text-decoration: underline; text-decoration-color: #00b8d9; text-decoration-thickness: 0.12em; text-underline-offset: 0.12em; }"
+    },
+    {
+      "name": "Line Field Strip",
+      "kind": "custom",
+      "refersTo": "colors.accent-cyan",
+      "description": "Static CSS approximation of the canvas signature: 1px vertical ink lines with an accent band layer under a radial mask. The shipped version is two canvases bent by the pointer.",
+      "html": "<div class=\"ds-field\"><div class=\"ds-field-color\"></div><div class=\"ds-field-ink\"></div></div>",
+      "css": ".ds-field { position: relative; height: 7rem; background: #f1f3f4; overflow: hidden; } .ds-field-color, .ds-field-ink { position: absolute; inset: 0; } .ds-field-color { background: repeating-linear-gradient(90deg, #00b8d9 0 3px, transparent 3px 18px); -webkit-mask-image: radial-gradient(ellipse 30% 70% at 50% 50%, #000 25%, transparent 80%); mask-image: radial-gradient(ellipse 30% 70% at 50% 50%, #000 25%, transparent 80%); } .ds-field-ink { background: repeating-linear-gradient(90deg, #0c0c0d 0 1px, transparent 1px 9px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Vibrating Ground",
+    "overview": "A cool white page that is mostly empty, so the few things on it can move. The ground is a field of 1px vertical lines (Soto / Cruz-Diez, Venezuelan kinetic art) that bend around the visitor's pointer, with a strip of the current accent shifting behind them. The name is set in a variable face whose width axis opens near the cursor. Everything else is ink on paper, ruled by hairlines.\n\nThe system is sober by omission: one chromatic accent at a time, no radius on structure, no shadow, no imagery, no icons beyond one arrow. Density is low; type size carries hierarchy, not weight of decoration. Motion is the personality, and it is always tied to the pointer or to hover.",
+    "keyCharacteristics": [
+      "Ink (#0c0c0d) on cool paper (#f1f3f4); the accent is the only chroma on the page.",
+      "Width-axis display type (Anybody) used at enormous and mid sizes; Hanken Grotesk for reading text.",
+      "1px vertical lines are the only ornament; rules and borders are 1px ink.",
+      "Flat, square, shadowless; depth comes from the canvas field and a mask-revealed color strip.",
+      "Bilingual ES/EN by paired spans; layout never depends on which language shows."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Exactly one accent is live at a time; the other two exist only as swatches in the top bar. Never show two accents together or add a fourth hue.", "section": "colors" },
+      { "name": "The Ink-On-Yellow Rule", "body": "Text that sits on the accent is always ink, and when yellow is live, underline hovers switch to ink so they stay legible. Never place accent-colored text on Cool Paper.", "section": "colors" },
+      { "name": "The Width Is The Motion Rule", "body": "Display type animates through font-variation-settings (wdth, wght), never through scale or position shifts. Transitions run 0.5 to 0.6s on --ease.", "section": "typography" },
+      { "name": "The Reading Text Rule", "body": "Anything longer than a line is Hanken, never Anybody.", "section": "typography" },
+      { "name": "The Flat Rule", "body": "Surfaces never lift. State changes use color fill, width-axis change, or a 4px arrow nudge, not shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep exactly one accent live and drive it through --accent / data-accent.",
+      "Do put all ornament in 1px vertical lines and 1px ink rules.",
+      "Do animate display type through wdth and wght, honoring prefers-reduced-motion by freezing to the settled state.",
+      "Do keep every string as a paired ES/EN span and make layouts work with either.",
+      "Do keep content visible by default; reveal animation applies only when JS is on and motion is welcome."
+    ],
+    "donts": [
+      "Don't use a dark bento grid, card wall, or tech-stack icon wall.",
+      "Don't add radius, drop shadows, gradients as fills, or imagery.",
+      "Don't set body-length text in Anybody or accent-colored text on Cool Paper.",
+      "Don't introduce a second ornament motif beside the vertical lines."
+    ]
+  }
+}

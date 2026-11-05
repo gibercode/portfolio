@@ -1,0 +1,108 @@
+{
+  "title": "Elige el mundo visual de tu portafolio",
+  "question": "Segunda mano. El sorteo asignó «Cinetismo venezolano». Puedes quedarte con él, tomar una alternativa o volver a sortear.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Cinetismo venezolano",
+      "kicker": "THE ROLL",
+      "lineage": "Jesús Soto y Carlos Cruz-Diez: Vibración, Physichromie y los campos de líneas del arte cinético",
+      "thesis": "Una página casi vacía donde todo se mueve con tu cursor: líneas negras finas que vibran y un solo campo de color que cambia según desde dónde miras, como una obra de Cruz-Diez. Tu código, como esa obra, se transforma según el ángulo.",
+      "palette": ["#f1f3f4", "#0c0c0d", "#00b8d9", "#ea1e7d", "#ffd400"],
+      "materials": ["líneas negras de 1px sobre blanco frío", "bandas cromáticas tipo Physichromie", "muaré generado en canvas/CSS"],
+      "viewport": "Fondo blanco frío con un campo de líneas verticales finas que ondula hacia el cursor. Tu nombre «Giberson Lara» en grotesca grande sobre la izquierda, una sola banda cromática que cambia de cian a magenta a amarillo al mover el mouse, y debajo una línea de rol y un enlace de contacto.",
+      "risk": "El muaré a pantalla completa puede cansar la vista o costar rendimiento; hay que acotarlo a una zona, mantener el texto legible y respetar movimiento reducido.",
+      "raised": [
+        {"from": "Ikebana · ma", "raise": "El vacío es activo: composición asimétrica con zonas intencionalmente vacías, y los proyectos aparecen en ese espacio."},
+        {"from": "Burocracia civil", "raise": "Todo el color se gasta en un único objeto cromático y un solo botón; el resto es blanco y tinta."},
+        {"from": "Cuarto oscuro", "raise": "Las secciones emergen una sola vez de forma continua, como una imagen que se revela, sin entradas dispersas."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Rótulo callejero venezolano",
+      "kicker": "IMPECCABLE'S PICK",
+      "lineage": "Rotulación pintada a mano de fachadas, kioscos y buses de Venezuela",
+      "thesis": "Tu nombre y tus proyectos como letreros pintados a mano con brocha: colores planos, sombras desplazadas y letras con carácter.",
+      "palette": ["#ffd400", "#d7261e", "#0a5ba8", "#111111"],
+      "materials": ["pintura plana", "sombra desplazada", "letras trazadas con brocha"],
+      "viewport": "Una fachada rotulada con tu nombre y tres letreros de proyecto.",
+      "risk": "Es la dirección que más se parece a ti por origen, pero es ruidosa y se aleja de lo minimalista que pediste."
+    },
+    {
+      "id": "challenger-alphabet",
+      "label": "Tormenta de letras",
+      "verdict": "competitive",
+      "lineage": "Tipografía como materia y clima",
+      "thesis": "Las letras de tu nombre se condensan, se deshacen en lluvia y vuelven a formar palabras.",
+      "palette": ["#fafafa", "#0c0c0d", "#b8c4cc"],
+      "materials": ["grotesca monumental", "blanco papel", "un destello plateado"],
+      "viewport": "Tu nombre enorme que reacciona al cursor como viento.",
+      "case": "Muy minimalista y animada; compite en identidad pero comunica menos sobre lo que construyes.",
+      "risk": "Puede quedar como un efecto sin contenido si los proyectos no tienen su propio lugar.",
+      "hero": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-alphabet-storm-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-alphabet-storm.webp"
+    },
+    {
+      "id": "challenger-arcade",
+      "label": "Máquina arcade",
+      "verdict": "competitive",
+      "lineage": "Pantallas de arcade en pixel art",
+      "thesis": "Tu portafolio como un nivel de arcade: píxeles gruesos, líneas de barrido y proyectos como pantallas.",
+      "palette": ["#0a0a12", "#ffd400", "#ff3d7f", "#2de2e6"],
+      "materials": ["píxeles", "scanlines", "brillo de fósforo"],
+      "viewport": "Menú de inicio pixelado con tu nombre y tres salas de proyecto.",
+      "case": "Fuerte identidad de desarrollador; compite pero cae en lo nostálgico y en el cliché del fondo oscuro con neón.",
+      "risk": "Tiende al cliché «retro gamer» y no es minimalista.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-crt-arcade-pixel-glow-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/medium-native-crt-arcade-pixel-glow.webp"
+    },
+    {
+      "id": "challenger-darkroom",
+      "label": "Cuarto oscuro",
+      "verdict": "declined",
+      "lineage": "Laboratorio de revelado fotográfico",
+      "case": "Pierde en ambos ejes: nadie asocia un cuarto oscuro con desarrollo de software.",
+      "kept": "Emergencia lenta y continua de una sola imagen.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-darkroom-safelight-bay-hero.webp"
+    },
+    {
+      "id": "challenger-ikebana",
+      "label": "Ikebana · ma",
+      "verdict": "declined",
+      "lineage": "Arreglo floral japonés en un tokonoma",
+      "case": "Hermoso y minimalista, pero no expresa tu perfil técnico ni a tu audiencia.",
+      "kept": "El vacío como parte activa de la composición.",
+      "hero": "https://impeccable.style/worlds/cards/growth-metamorphosis-branching-ikebana-ma-arrangement-hero.webp"
+    },
+    {
+      "id": "challenger-civic",
+      "label": "Prospecto de burocracia",
+      "verdict": "declined",
+      "lineage": "Folletos corporativos modernos tardíos",
+      "case": "Proyecta institución, no a una persona creativa.",
+      "kept": "Gastar todo el color en un solo objeto y un botón.",
+      "hero": "https://impeccable.style/worlds/cards/civic-bureau-prospectus-late-modern-hero.webp"
+    },
+    {
+      "id": "challenger-fight",
+      "label": "Cartel de pelea",
+      "verdict": "declined",
+      "lineage": "Carteles de boxeo",
+      "case": "El enfrentamiento no tiene relación con tu oferta.",
+      "kept": "Compromiso total con la escala tipográfica.",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-fight-poster-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar de la categoría",
+    "thesis": "Portafolio oscuro y minimalista con hero, cuadrícula de proyectos y stack, bien ejecutado.",
+    "palette": ["#0a0a0a", "#fafafa", "#6366f1"],
+    "materials": ["cuadrícula bento", "tipografía sans neutra"],
+    "viewport": "Saludo, rol y botón de contacto sobre fondo oscuro.",
+    "risk": "Indistinguible de otros portafolios de desarrolladores por diseño."
+  },
+  "steer": true
+}

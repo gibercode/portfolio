@@ -1,0 +1,128 @@
+---
+import '@fontsource-variable/anybody/wdth.css';
+import '@fontsource-variable/hanken-grotesk';
+import '../styles/global.css';
+import { profile, projects, stack } from '../data';
+
+const first = 'GIBERSON'.split('');
+const last = 'LARA'.split('');
+---
+<!doctype html>
+<html lang="es" data-lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giberson Lara · Desarrollador full-stack</title>
+    <meta name="description" content="Portafolio de Giberson Lara, desarrollador full-stack: APIs, web, móvil e IA. Portfolio of Giberson Lara, full-stack developer." />
+    <meta name="theme-color" content="#f1f3f4" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f1f3f4'/%3E%3Cpath d='M6 4v24M12 4v24M18 4v24M24 4v24' stroke='%230c0c0d' stroke-width='1.5'/%3E%3Crect x='14.5' y='4' width='3' height='24' fill='%2300b8d9'/%3E%3C/svg%3E" />
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add('js');
+        try {
+          var lang = localStorage.getItem('gl-lang') || ((navigator.language || 'es').slice(0, 2) === 'en' ? 'en' : 'es');
+          root.dataset.lang = lang;
+          root.lang = lang;
+          var accent = localStorage.getItem('gl-accent');
+          if (accent) root.dataset.accent = accent;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#obras"><span lang="es">Ir al contenido</span><span lang="en">Skip to content</span></a>
+
+    <header class="bar">
+      <a class="mark" href="#top" aria-label="Giberson Lara">GL</a>
+      <div class="controls">
+        <div class="swatches" role="group" aria-label="Color de acento / Accent color">
+          <button type="button" class="sw" data-accent="cyan" aria-label="Cian / Cyan" aria-pressed="true"></button>
+          <button type="button" class="sw" data-accent="magenta" aria-label="Magenta" aria-pressed="false"></button>
+          <button type="button" class="sw" data-accent="yellow" aria-label="Amarillo / Yellow" aria-pressed="false"></button>
+        </div>
+        <div class="langs" role="group" aria-label="Idioma / Language">
+          <button type="button" data-set-lang="es" aria-pressed="true">ES</button>
+          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="name">
+        <canvas class="field field-color" aria-hidden="true"></canvas>
+        <canvas class="field field-ink" aria-hidden="true"></canvas>
+
+        <h1 id="name" class="name" aria-label="Giberson Lara">
+          <span class="row" aria-hidden="true">{first.map((c) => <span class="ch">{c}</span>)}</span>
+          <span class="row" aria-hidden="true">{last.map((c) => <span class="ch">{c}</span>)}</span>
+        </h1>
+
+        <div class="hero-foot">
+          <p class="role">
+            <span lang="es">Desarrollador full-stack. Construyo productos completos: API, web, móvil e IA.</span>
+            <span lang="en">Full-stack developer. I build whole products: API, web, mobile and AI.</span>
+          </p>
+          <div class="actions">
+            <a class="btn" href={profile.whatsapp} target="_blank" rel="noopener noreferrer"><span lang="es">Escríbeme</span><span lang="en">Message me</span></a>
+            <a class="link" href={profile.github} rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="work" id="obras" aria-labelledby="work-h">
+        <h2 id="work-h" class="rev"><span lang="es">Proyectos</span><span lang="en">Projects</span></h2>
+        <ul class="projects">
+          {projects.map((p) => (
+            <li class="project">
+              {p.href ? <a href={p.href} rel="noopener">
+                <span class="p-title">{p.title}</span>
+                <span class="p-desc"><span lang="es">{p.es}</span><span lang="en">{p.en}</span></span>
+                <span class="p-tags"><span lang="es">{p.tags.join(' · ')}</span><span lang="en">{(p.tagsEn ?? p.tags).join(' · ')}</span></span>
+                <span class="p-motif" aria-hidden="true"></span>
+                <svg class="p-arrow" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>
+              </a> : <div class="row-static">
+                <span class="p-title">{p.title}</span>
+                <span class="p-desc"><span lang="es">{p.es}</span><span lang="en">{p.en}</span></span>
+                <span class="p-tags"><span lang="es">{p.tags.join(' · ')}</span><span lang="en">{(p.tagsEn ?? p.tags).join(' · ')}</span></span>
+              </div>}
+            </li>
+          ))}
+        </ul>
+        <p class="more"><a class="link" href={profile.github} rel="noopener"><span lang="es">Más en GitHub</span><span lang="en">More on GitHub</span></a></p>
+      </section>
+
+      <section class="stack" aria-labelledby="stack-h">
+        <h2 id="stack-h" class="rev"><span lang="es">Con qué construyo</span><span lang="en">What I build with</span></h2>
+        <dl class="groups">
+          {stack.map((g) => (
+            <div class="group">
+              <dt><span lang="es">{g.es}</span><span lang="en">{g.en}</span></dt>
+              <dd>{g.items.map((i) => typeof i === 'string' ? <span class="term">{i}</span> : <span class="term"><span lang="es">{i[0]}</span><span lang="en">{i[1]}</span></span>)}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section class="close" aria-labelledby="close-h">
+        <h2 id="close-h" class="big rev"><span lang="es">Hablemos.</span><span lang="en">Let's talk.</span></h2>
+        <p class="close-p rev">
+          <span lang="es">Abierto a roles full-stack remotos o híbridos y a proyectos freelance. Cuéntame qué necesitas y lo conversamos.</span>
+          <span lang="en">Open to remote or hybrid full-stack roles and freelance projects. Tell me what you need and let's talk.</span>
+        </p>
+        <a class="btn" href={`mailto:${profile.email}`}>{profile.email}</a>
+        <div class="strip" aria-hidden="true"><canvas class="strip-color"></canvas><canvas class="strip-ink"></canvas></div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span lang="es">Hecho con Astro. Probablemente programando.</span>
+      <span lang="en">Built with Astro. Probably coding.</span>
+      <span>© 2026 Giberson Lara</span>
+    </footer>
+
+    <script>
+      import '../scripts/main';
+    </script>
+  </body>
+</html>
