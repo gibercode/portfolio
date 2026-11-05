@@ -2,20 +2,74 @@
 import '@fontsource-variable/anybody/wdth.css';
 import '@fontsource-variable/hanken-grotesk';
 import '../styles/global.css';
+import anybodyFont from '@fontsource-variable/anybody/files/anybody-latin-wdth-normal.woff2?url';
+import hankenFont from '@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2?url';
 import { profile, projects, stack } from '../data';
 
 const first = 'GIBERSON'.split('');
 const last = 'LARA'.split('');
+
+const title = 'Giberson Lara · Desarrollador full-stack NestJS y React';
+const description = 'Giberson Lara, desarrollador full-stack en Caracas. APIs, apps web y móviles e IA con NestJS, React y Next.js. Abierto a roles remotos, híbridos y freelance.';
+const site = Astro.site?.origin;
+const canonical = site ? `${site}/` : undefined;
+const ogImage = site ? `${site}/og.png` : undefined;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': canonical ? `${canonical}#person` : '#person',
+      name: profile.name,
+      jobTitle: 'Full-stack developer',
+      description,
+      ...(canonical && { url: canonical }),
+      ...(ogImage && { image: ogImage }),
+      address: { '@type': 'PostalAddress', addressLocality: 'Caracas', addressCountry: 'VE' },
+      alumniOf: { '@type': 'CollegeOrUniversity', name: 'UNEXCA' },
+      knowsLanguage: ['es', 'en'],
+      sameAs: [profile.github, profile.linkedin],
+      knowsAbout: ['NestJS', 'Node.js', 'React', 'Next.js', 'Vue', 'Angular', 'Astro', 'React Native', 'PostgreSQL', 'MongoDB', 'Docker', 'CI/CD', 'LLM'],
+    },
+    {
+      '@type': 'WebSite',
+      name: 'Giberson Lara',
+      inLanguage: ['es', 'en'],
+      ...(canonical && { url: canonical }),
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang="es" data-lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Giberson Lara · Desarrollador full-stack</title>
-    <meta name="description" content="Portafolio de Giberson Lara, desarrollador full-stack: APIs, web, móvil e IA. Portfolio of Giberson Lara, full-stack developer." />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Giberson Lara" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#f1f3f4" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f1f3f4'/%3E%3Cpath d='M6 4v24M12 4v24M18 4v24M24 4v24' stroke='%230c0c0d' stroke-width='1.5'/%3E%3Crect x='14.5' y='4' width='3' height='24' fill='%2300b8d9'/%3E%3C/svg%3E" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="font" type="font/woff2" href={anybodyFont} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={hankenFont} crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Giberson Lara" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_VE" />
+    <meta property="og:locale:alternate" content="en_US" />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta property="og:image:width" content="1200" />}
+    {ogImage && <meta property="og:image:height" content="630" />}
+    {ogImage && <meta property="og:image:alt" content="Giberson Lara, desarrollador full-stack, sobre un campo de líneas verticales" />}
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <script is:inline>
       (function () {
         var root = document.documentElement;
@@ -53,7 +107,8 @@ const last = 'LARA'.split('');
         <canvas class="field field-color" aria-hidden="true"></canvas>
         <canvas class="field field-ink" aria-hidden="true"></canvas>
 
-        <h1 id="name" class="name" aria-label="Giberson Lara">
+        <h1 id="name" class="name">
+          <span class="sr-only">Giberson Lara, <span lang="es">desarrollador full-stack</span><span lang="en">full-stack developer</span></span>
           <span class="row" aria-hidden="true">{first.map((c) => <span class="ch">{c}</span>)}</span>
           <span class="row" aria-hidden="true">{last.map((c) => <span class="ch">{c}</span>)}</span>
         </h1>
@@ -65,7 +120,7 @@ const last = 'LARA'.split('');
           </p>
           <div class="actions">
             <a class="btn" href={profile.whatsapp} target="_blank" rel="noopener noreferrer"><span lang="es">Escríbeme</span><span lang="en">Message me</span></a>
-            <a class="link" href={profile.github} rel="noopener">GitHub</a>
+            <a class="link" href={profile.github} rel="me noopener">GitHub</a>
           </div>
         </div>
       </section>

@@ -1,0 +1,25 @@
+---
+import '@fontsource-variable/anybody/wdth.css';
+import '@fontsource-variable/hanken-grotesk';
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="es" data-lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>404 · Giberson Lara</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      try { var l = localStorage.getItem('gl-lang') || ((navigator.language || 'es').slice(0, 2) === 'en' ? 'en' : 'es'); document.documentElement.dataset.lang = l; document.documentElement.lang = l; } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <main class="close" style="min-height:100svh;display:grid;align-content:center;">
+      <h1 class="big"><span lang="es">404</span><span lang="en">404</span></h1>
+      <p class="close-p"><span lang="es">Esta página no existe.</span><span lang="en">This page does not exist.</span></p>
+      <a class="btn" href="/"><span lang="es">Volver al inicio</span><span lang="en">Back home</span></a>
+    </main>
+  </body>
+</html>

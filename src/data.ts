@@ -1,6 +1,7 @@
 export const profile = {
   name: 'Giberson Lara',
   github: 'https://github.com/gibercode',
+  linkedin: 'https://www.linkedin.com/in/giberson-lara-3b9421161/',
   email: 'giberlara@gmail.com',
   whatsapp: 'https://wa.me/584242012127',
 };
@@ -19,7 +20,7 @@ export const projects: Project[] = [
   { title: 'aitune', href: 'https://aitune.vercel.app/', tags: ['TypeScript', 'IA'], tagsEn: ['TypeScript', 'AI'], es: 'App que sugiere música con inteligencia artificial.', en: 'App that suggests music with artificial intelligence.' },
   { title: 'image-microfrontends', href: 'https://image-main-micro.vercel.app/', tags: ['Microfrontends', 'TypeScript'], es: 'Buscador de imágenes armado con varios microfrontends, cada uno en su propio repositorio.', en: 'Image search built from several microfrontends, each in its own repository.' },
   { title: 'bolsi-app', href: 'https://play.google.com/store/apps/details?id=com.gibercode.bolsi&hl=es', tags: ['TypeScript', 'Android'], es: 'Bolsi, tu calculadora de tasas, disponible en Google Play.', en: 'Bolsi, your rate calculator, available on Google Play.' },
-  { title: 'bolsi-web', href: 'https://bolsiapp.com/', tags: ['CSS', 'Landing'], es: 'Landing y políticas de privacidad de la app Bolsi.', en: 'Landing page and privacy policy for the Bolsi app.' },
+  { title: 'tasahub', href: 'https://www.tasahub.net/', tags: ['SaaS', 'API', 'Frontend'], es: 'SaaS con frontend y API: se integra en otros productos y se paga por la integración.', en: 'SaaS with a frontend and an API: integrate it into other products and pay per integration.' },
   { title: 'to-do-list-extension', href: 'https://chromewebstore.google.com/detail/to-do-list-extension/ehmdfekgloppchngidkpofakcpmbdbpl', tags: ['TypeScript', 'Chrome'], es: 'Extensión de Chrome para guardar tus tareas diarias.', en: 'Chrome extension to save your daily tasks.' },
 ];
 
