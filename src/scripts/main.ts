@@ -54,11 +54,12 @@ const t0 = performance.now();
 const coarse = matchMedia('(pointer: coarse)').matches;
 
 class Field {
-  W = 0; H = 0; dpr = 1; gap = 9; sigma: number;
+  W = 0; H = 0; dpr = 1; gap = 9; sigma: number; baseSigma: number;
   tx = 0.68; ty = 0.42; sx = 0.68; sy = 0.42;
   visible = false; revealFrom = 0;
   ink: CanvasRenderingContext2D; col: CanvasRenderingContext2D | null;
   constructor(public host: HTMLElement, public inkCv: HTMLCanvasElement, public colCv: HTMLCanvasElement | null, sigma = 190) {
+    this.baseSigma = sigma;
     this.sigma = sigma;
     this.ink = inkCv.getContext('2d')!;
     this.col = colCv ? colCv.getContext('2d')! : null;
@@ -75,6 +76,7 @@ class Field {
     const r = this.inkCv.getBoundingClientRect();
     this.W = r.width; this.H = r.height;
     this.gap = this.W < 700 ? 7 : 9;
+    this.sigma = Math.min(this.baseSigma, Math.max(90, this.W * 0.14));
     for (const c of [this.inkCv, this.colCv]) {
       if (!c) continue;
       c.width = Math.round(this.W * this.dpr); c.height = Math.round(this.H * this.dpr);
@@ -162,8 +164,9 @@ function updateLetters(now: number) {
     const dy = r.top - hr.top + r.height / 2 - cy;
     const near = Math.exp(-(dx * dx + dy * dy) / (2 * 240 * 240));
     const intro = reduce ? 0 : 1 - easeOutExpo((t - 350 - i * 60) / 1100);
-    const wdth = 72 + near * 22 + intro * 8;
-    const wght = 760 + near * 15 - intro * 80;
+    const narrow = f.W < 700;
+    const wdth = (narrow ? 56 : 72) + near * (narrow ? 8 : 22) + intro * 8;
+    const wght = 760 + near * (narrow ? 6 : 15) - intro * 80;
     el.style.fontVariationSettings = `'wdth' ${wdth.toFixed(1)}, 'wght' ${wght.toFixed(0)}`;
     el.style.transform = intro > 0.001 ? `translateY(${(intro * 108).toFixed(2)}%)` : '';
   });
@@ -177,15 +180,22 @@ function frame(now: number) {
   for (const f of fields) {
     if (!f.visible) continue;
     if (idle) {
-      f.tx = 0.5 + 0.3 * Math.sin(t / 2800 + (f === heroField ? 0 : 2));
-      f.ty = 0.45 + 0.2 * Math.sin(t / 1900 + 1);
+      if (f === heroField && f.W < 700) {
+        // phones: a slow drift kept in the open upper field so the colour band never leaves the frame
+        f.tx = 0.5 + 0.2 * Math.sin(t / 3400);
+        f.ty = 0.3 + 0.1 * Math.sin(t / 2600 + 1);
+      } else {
+        f.tx = 0.5 + 0.3 * Math.sin(t / 2800 + (f === heroField ? 0 : 2));
+        f.ty = 0.45 + 0.2 * Math.sin(t / 1900 + 1);
+      }
     }
     f.sx += (f.tx - f.sx) * 0.1;
     f.sy += (f.ty - f.sy) * 0.1;
     f.draw(now);
   }
-  hero.style.setProperty('--zx', `${(0.4 + heroField.sx * 0.5) * 100}%`);
-  hero.style.setProperty('--zy', `${(0.25 + heroField.sy * 0.4) * 100}%`);
+  const phone = heroField.W < 700;
+  hero.style.setProperty('--zx', `${(phone ? heroField.sx : 0.4 + heroField.sx * 0.5) * 100}%`);
+  hero.style.setProperty('--zy', `${(phone ? heroField.sy : 0.25 + heroField.sy * 0.4) * 100}%`);
   if (stripField?.visible) stripEl!.style.setProperty('--zx', `${stripField.sx * 100}%`);
   if (heroField.visible) updateLetters(now);
 }

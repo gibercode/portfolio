@@ -75,7 +75,7 @@ const jsonLd = {
         var root = document.documentElement;
         root.classList.add('js');
         try {
-          var lang = localStorage.getItem('gl-lang') || ((navigator.language || 'es').slice(0, 2) === 'en' ? 'en' : 'es');
+          var lang = localStorage.getItem('gl-lang') || 'es';
           root.dataset.lang = lang;
           root.lang = lang;
           var accent = localStorage.getItem('gl-accent');

@@ -12,7 +12,7 @@ import '../styles/global.css';
     <title>404 · Giberson Lara</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script is:inline>
-      try { var l = localStorage.getItem('gl-lang') || ((navigator.language || 'es').slice(0, 2) === 'en' ? 'en' : 'es'); document.documentElement.dataset.lang = l; document.documentElement.lang = l; } catch (e) {}
+      try { var l = localStorage.getItem('gl-lang') || 'es'; document.documentElement.dataset.lang = l; document.documentElement.lang = l; } catch (e) {}
     </script>
   </head>
   <body>

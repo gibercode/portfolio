@@ -157,6 +157,8 @@ h2 { font: 800 clamp(2.75rem, 9vw, 8rem)/0.9 var(--display); font-stretch: 78%; 
 }
 
 @media (max-width: 760px) {
+  .name { font-size: 28vw; }
+  .field-color { -webkit-mask-image: radial-gradient(ellipse 70% 34% at var(--zx, 50%) var(--zy, 30%), #000 30%, transparent 80%); mask-image: radial-gradient(ellipse 70% 34% at var(--zx, 50%) var(--zy, 30%), #000 30%, transparent 80%); }
   .project a { grid-template-columns: 1fr auto; row-gap: 0.4rem; }
   .p-desc { grid-column: 1 / -1; grid-row: 2; }
   .p-tags { grid-column: 1; grid-row: 3; text-align: left; }
